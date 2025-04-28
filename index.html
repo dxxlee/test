@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Inhouse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Cormorant Garamond -->
+  <link 
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" 
+  rel="stylesheet"
+/>
+
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Your<span>Name</span></a>
+        <ul class="menu">
+          <li><a href="#brands">Бренды</a></li>
+          <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#cooperation">Сотрудничество</a></li>
+          <li><a href="#special">Специальные предложения</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#models">3D-модели</a></li>
+          <li><a href="#tour">Виртуальный тур</a></li>
+        </ul>
+        <div class="menu-toggle">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <!-- 1) flex-контейнер слайдов -->
+    <div class="slides">
+      <div class="slide" style="background-image:url('images/sofa.jpg')"></div>
+      <div class="slide" style="background-image:url('images/rich-room.jpg')"></div>
+      <div class="slide" style="background-image:url('images/room.jpg')"></div>
+      <div class="slide" style="background-image:url('images/room2.jpg')"></div>
+    </div>
+  
+    <!-- 2) затемняющий оверлей -->
+    <div class="overlay"></div>
+  
+    <!-- 3) здесь – ваш текст и кнопка -->
+    <div class="hero-content">
+      <h1>СКИДКА <b>30%</b> НА ЗАКАЗ</h1>
+      <p>Специальные условия на покупку премиальной мебели</p>
+      <a href="#more" class="btn">ПОДРОБНЕЕ</a>
+    </div>
+  
+    <!-- 4) стрелки навигации -->
+    <button class="slider-prev"></button>
+    <button class="slider-next"></button>
+  
+    <!-- 5) точки пагинации -->
+    <div class="slider-dots">
+      <button class="slider-dot active"></button>
+      <button class="slider-dot"></button>
+      <button class="slider-dot"></button>
+      <button class="slider-dot"></button>
+    </div>
+  </section>
+  
+  
+
+  <!-- ===== Секция «Категории» ===== -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">То, что мы для Вас подготовили</h2>
+      <div class="categories-grid">
+        <!-- 1 -->
+        <a href="#sofas" class="category-item" style="background-image:url('images/sofa.jpg')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Диваны</h3>
+            <p>Подберите диван вашей мечты</p>
+          </div>
+        </a>
+  
+        <!-- 2 -->
+        <a href="#beds" class="category-item" style="background-image:url('https://laurajamesfurniture.com/cdn/shop/files/cavill-grey-fabric-bed-frame-upholstered-double-laura-james-1.png?v=1725630716')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Кровати</h3>
+            <p>Выбирайте максимальный комфорт</p>
+          </div>
+        </a>
+  
+        <!-- 3 -->
+        <a href="#tables" class="category-item" style="background-image:url('https://www.riflessi.it/en/image-thumb__5902__slider-mobile/Tavolo-moderno-Living-01-1%20%281%29.jpg')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Столы</h3>
+            <p>Создайте уютное место для работы</p>
+          </div>
+        </a>
+  
+        <!-- 4 -->
+        <a href="#chairs" class="category-item" style="background-image:url('https://plus.unsplash.com/premium_photo-1681980019667-96baeb36fc33?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Кресла</h3>
+            <p>Идеальная поддержка для вашего тела</p>
+          </div>
+        </a>
+  
+        <!-- 5 -->
+        <a href="#wardrobes" class="category-item" style="background-image:url('https://plus.unsplash.com/premium_photo-1674815329032-421d305ad589?q=80&w=2019&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Шкафы</h3>
+            <p>Организуйте порядок в доме</p>
+          </div>
+        </a>
+  
+        <!-- 6 -->
+        <a href="#dressers" class="category-item" style="background-image:url('https://green-mebel.kz/wp-content/uploads/2025/03/adriana-grej.png')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Комоды</h3>
+            <p>Стильное хранение вещей</p>
+          </div>
+        </a>
+  
+        <!-- 7 -->
+        <a href="#shelves" class="category-item" style="background-image:url('https://images.prom.ua/4104253156_w640_h2048_photo_2022_11_15_14.23.59.jpeg?fresh=1&PIMAGE_ID=4104253156')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Стеллажи</h3>
+            <p>Расставьте акценты на вещах</p>
+          </div>
+        </a>
+  
+        <!-- 8 -->
+        <a href="#benches" class="category-item" style="background-image:url('https://st.hzcdn.com/simgs/1051f15e0fccd978_8-5670/traditional-entry.jpg')">
+          <div class="category-overlay"></div>
+          <div class="category-link"><span>Подробнее</span></div>
+          <div class="category-content">
+            <h3>Скамьи</h3>
+            <p>Удобство и лаконичный стиль</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+   <!-- ===== Секция «Оставьте ваши данные» ===== -->
+   <section class="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <h2 class="contact-title">
+          Оставьте ваши данные и наши менеджеры свяжутся с вами<br/>
+          в течение 10 минут
+        </h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="+996 (___) ___-___" required />
+          </div>
+          <button type="submit" class="btn-submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ===== Секция «Готовые комплекты» ===== -->
+    <section class="sets-section">
+        <div class="container">
+          <h2 class="section-title">Готовые комплекты</h2>
+    
+          <div class="sets-carousel">
+            <!-- стрелки -->
+            <button class="slider-prev"></button>
+            <button class="slider-next"></button>
+    
+            <!-- дорожка с элементами -->
+            <div class="sets-track">
+              <!-- повторяйте блок .sets-item столько раз, сколько нужно -->
+              <div class="sets-item">
+                <img src="https://pinskdrev.kz/web/files/imagick_cache/w2000h2000t1/web/catalogfiles/catalog/products/Line_P620-02-P620-03-P620-04-P620-05-P620-01_Kamen-seryy-Dub-Votan.jpg" alt="Спальня Defne - Akyol">
+                <div class="sets-info">
+                  <h3>Спальня Defne - Akyol</h3>
+                  <p>Благодаря современному дизайну, который заставит вас почувствовать себя особенным…</p>
+                  <a href="#" class="btn">Подробнее</a>
+                  <a href="#" class="btn btn-outline">Другие комплекты</a>
+                </div>
+              </div>
+    
+              <div class="sets-item">
+                <img src="https://cdn.domdivanov.kz/files/imgs/ig1111929/sku@isfmml04-2000x1460.JPG" alt="Спальня Kapadokya - Akyol">
+                <div class="sets-info">
+                  <h3>Спальня Kapadokya - Akyol</h3>
+                  <p>Привлекательная гармония кремовых и коричневых тонов в сочетании с золотыми деталями…</p>
+                  <a href="#" class="btn">Подробнее</a>
+                  <a href="#" class="btn btn-outline">Другие комплекты</a>
+                </div>
+              </div>
+
+              <div class="sets-item">
+                <img src="https://oneandhome.ru/sites/default/files/blog2023/uyutnaya-spalnya-02.JPG" alt="Спальня Defne - Akyol">
+                <div class="sets-info">
+                  <h3>Спальня Defne - Akyol</h3>
+                  <p>Благодаря современному дизайну, который заставит вас почувствовать себя особенным…</p>
+                  <a href="#" class="btn">Подробнее</a>
+                  <a href="#" class="btn btn-outline">Другие комплекты</a>
+                </div>
+              </div>
+
+              <div class="sets-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQonBpXOcdsUx2jJo3ExaJO-SkPf4hO7lVsuQ&s" alt="Спальня Defne - Akyol">
+                <div class="sets-info">
+                  <h3>Спальня Defne - Akyol</h3>
+                  <p>Благодаря современному дизайну, который заставит вас почувствовать себя особенным…</p>
+                  <a href="#" class="btn">Подробнее</a>
+                  <a href="#" class="btn btn-outline">Другие комплекты</a>
+                </div>
+              </div>
+
+              <div class="sets-item">
+                <img src="https://wallstreetstudio.ru/image/catalog/interier/0_proektydizajnerov/226_261/1.jpg" alt="Спальня Defne - Akyol">
+                <div class="sets-info">
+                  <h3>Спальня Defne - Akyol</h3>
+                  <p>Благодаря современному дизайну, который заставит вас почувствовать себя особенным…</p>
+                  <a href="#" class="btn">Подробнее</a>
+                  <a href="#" class="btn btn-outline">Другие комплекты</a>
+                </div>
+              </div>
+    
+              <!-- ещё .sets-item … -->
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+
+      <!-- ===== Контакты ===== -->
+  <section class="contacts">
+    <div class="container">
+      <h2>Контакты</h2>
+      <div class="contacts-block">
+        <div class="contacts-left">
+          <div class="contact-item">
+            <h3>Время работы:</h3>
+            <p>Каждый день с 10:00 до 21:00</p>
+          </div>
+          <div class="contact-item">
+            <h3>Адрес:</h3>
+            <p>Бишкек, мкр. Улан-2, ул. 7 апреля, 2</p>
+            <small>(бывшая ул. Алматинская/Ахунбаева)</small>
+          </div>
+          <div class="contact-item">
+            <a href="tel:+996990020020">+996 990 020 020</a>
+            <small>Мегаком</small>
+          </div>
+          <div class="contact-item">
+            <a href="tel:+996777020020">+996 777 020 020</a>
+            <small>Билайн</small>
+          </div>
+          <div class="contact-item">
+            <a href="tel:+996707020020">+996 707 020 020</a>
+            <small>O!</small>
+          </div>
+          <div class="contact-item">
+            <a href="https://wa.me/996990020020" target="_blank">WhatsApp</a><br/>
+            <a href="mailto:inhousekyrgyzstan@gmail.com">inhousekyrgyzstan@gmail.com</a>
+          </div>
+          <p class="delivery-note">Доставка ковров по Кыргызстану — бесплатная!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-logo">
+        <a href="#" class="logo">In<span>house</span></a>
+        <div class="socials">
+          <a href="#" class="social-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGzUnojngjDyf4CIZyQFdiplf0sNjGyRosSg&s" alt="Instagram"></a>
+          <a href="#" class="social-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQucUojyTZm7MPuSX25uDTOgo_pxe_wWeNeAg&s" alt="WhatsApp"></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Бренды</h4>
+        <ul class="footer-list">
+          <li><a href="#">Modis</a></li>
+          <li><a href="#">Bomonti</a></li>
+          <li><a href="#">Akyol</a></li>
+          <li><a href="#">Ozzo</a></li>
+          <li><a href="#">Togo</a></li>
+          <li><a href="#">Verbatex</a></li>
+          <li><a href="#">Tisca</a></li>
+          <li><a href="#">Balta</a></li>
+          <li><a href="#">Yatsan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <ul class="footer-list">
+          <li><a href="#">Диваны</a></li>
+          <li><a href="#">Кровати</a></li>
+          <li><a href="#">Шкафы</a></li>
+          <li><a href="#">Столы</a></li>
+          <li><a href="#">Стулья</a></li>
+          <li><a href="#">Кресла</a></li>
+          <li><a href="#">Кофейные и журнальные столы</a></li>
+          <li><a href="#">Консоли</a></li>
+          <li><a href="#">Матрасы</a></li>
+          <li><a href="#">Ковры</a></li>
+          <li><a href="#">Пуфы</a></li>
+          <li><a href="#">Аксессуары</a></li>
+          <li><a href="#">Картины</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Информация</h4>
+        <ul class="footer-list">
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Полезно знать</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Оплата и доставка</a></li>
+          <li><a href="#">Специальное предложение</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 YourName. Все права защищены.</p>
+      <a href="#" class="privacy">Политика конфиденциальности</a>
+    </div>
+  </footer>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

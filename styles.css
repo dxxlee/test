@@ -1,0 +1,711 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  color: #fff; /* или ваш цвет текста */
+}
+
+
+/* Заголовки чуть «жирнее» */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* Header/Nav */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+.logo span {
+  color: #E84C3D;
+}
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
+/* сам контейнер */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* flex-карусель */
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+}
+.slide {
+  flex: 0 0 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* затемнение */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+
+/* === ВНИМАНИЕ: именно здесь задаём текст поверх === */
+.hero-content {
+  position: absolute;      /* абсолютом, чтобы не “прыгал” при смене слайда */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 3;               /* выше .slides (0-1) и .overlay (2) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+}
+/* ваши стили для заголовка/абзаца/кнопки */
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero-content h1 b {
+  font-size: 3rem;
+}
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.hero-content .btn {
+  background: #fff;
+  color: #000;
+  padding: 15px 40px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* стрелки и точки оставляем с z-index:4 или 5 */
+.slider-prev,
+.slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  /* ...остальные ваши стили... */
+}
+.slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  /* ...остальные ваши стили... */
+}
+
+
+/* стрелки и точки оставляем ваши стили... */
+
+
+/* ——————————————————————————————————————————
+   Улучшенные стили для стрелок-кнопок
+   —————————————————————————————————————————— */
+   .slider-prev,
+   .slider-next {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 68px;
+     height: 68px;
+     border: none;
+     background: rgba(255, 255, 255, 0.15);
+     backdrop-filter: blur(4px);
+     border-radius: 50%;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+     cursor: pointer;
+     transition: background 0.3s, transform 0.3s;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 10;
+   }
+   
+   .slider-prev {
+     left: 20px;
+   }
+   
+   .slider-next {
+     right: 20px;
+   }
+   
+   .slider-prev:hover,
+   .slider-next:hover {
+     background: rgba(255, 255, 255, 0.3);
+     transform: translateY(-50%) scale(1.1);
+   }
+   
+   /* CSS-стрелки */
+   .slider-prev::after,
+   .slider-next::after {
+     content: '';
+     display: inline-block;
+     width: 15px;
+     height: 15px;
+     margin: 20px;
+
+     border: solid #fff;
+     border-width: 0 2px 2px 0;
+   }
+   
+   /* направляем стрелки */
+   .slider-next::after {
+     transform: rotate(-45deg);
+   }
+   
+   .slider-prev::after {
+     transform: rotate(135deg);
+   }
+   
+
+/* Точки-пагинация */
+.slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.slider-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+  }
+  .menu-toggle {
+    display: block;
+    color: #fff;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content h1 b {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+/* ===== Секция «Категории» ===== */
+.categories {
+  padding: 80px 0;
+  background: #111;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #fff;
+}
+/* 2-колоночная сетка */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.category-item {
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s;
+}
+.category-item:hover {
+  transform: scale(1.03);
+}
+
+/* затемнение */
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.4s;
+}
+.category-item:hover .category-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* ссылка «Подробнее» */
+.category-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+.category-item:hover .category-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+.category-link span {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* заголовок и текст */
+.category-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  /* сразу видим, без трансформаций */
+}
+/* .category-item:hover .category-content {
+  opacity: 1;
+  transform: translateY(0);
+} */
+/* .category-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+} */
+.category-content p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* адаптив */
+@media (max-width: 992px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Секция обратной связи ===== */
+.contact {
+  padding: 90px 0;
+  background: #111;
+}
+.contact-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+.contact-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.form-group input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(242, 242, 242, 0.838);
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+}
+.form-group input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+.btn-submit {
+  align-self: center;
+  background: #272727;
+  color: #fff;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-submit:hover {
+  background: #3a3a3a;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+  .contact-wrapper {
+    padding: 30px 20px;
+  }
+  .contact-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .btn-submit {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+
+
+
+/* ===== Секция «Готовые комплекты» ===== */
+.sets-section {
+  padding: 80px 0;
+  background: #111;
+}
+.sets-section .section-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* контейнер карусели */
+.sets-carousel {
+  position: relative;
+}
+
+/* дорожка для скролла */
+/* сама дорожка: snap-прокрутка и чуть больший gap */
+.sets-track {
+  display: flex;
+  gap: 30px;                        /* раньше было 20px */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;    /* включаем snap */
+  padding-bottom: 10px;
+}
+
+/* прячем скроллбар */
+.sets-track::-webkit-scrollbar {
+  display: none;
+}
+.sets-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* отдельная карточка */
+/* карточки: больше, snap-align и hover-эффект */
+.sets-item {
+  flex: 0 0 320px;                  /* было 280px */
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  scroll-snap-align: start;         /* точка привязки */
+  transition: transform 0.3s;       /* плавный переход */
+}
+.sets-item:hover {
+  transform: scale(1.05);           /* приближение при наведении */
+  z-index: 1;                       /* чтобы не обрезалось соседним элементом */
+}
+.sets-item img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.sets-info {
+  padding: 20px;
+  color: #fff;
+}
+.sets-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.sets-info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* кнопки внутри карточки */
+.sets-info .btn {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.sets-info .btn-outline {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* стрелки (точно как в слайдере) */
+.sets-carousel .slider-prev,
+.sets-carousel .slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+.sets-carousel .slider-prev {
+  left: -120px;
+}
+.sets-carousel .slider-next {
+  right: -120px;
+}
+.sets-carousel .slider-prev:hover,
+.sets-carousel .slider-next:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+.sets-carousel .slider-prev::after,
+.sets-carousel .slider-next::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+.sets-carousel .slider-next::after { transform: rotate(-45deg); }
+.sets-carousel .slider-prev::after { transform: rotate(135deg); }
+
+.sets-track::-webkit-scrollbar { display: none; }
+.sets-track { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* адаптив: карточки в один ряд на маленьких */
+@media (max-width: 768px) {
+  .sets-track {
+    gap: 12px;
+  }
+  .sets-item {
+    flex: 0 0 240px;
+  }
+}
+
+
+
+
+/* ===== Контакты ===== */
+.contacts {
+  padding: 80px 0;
+  background: #111;
+  color: #fff;
+}
+.contacts h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.contacts-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contacts-left {
+  flex: 1 1 400px;
+}
+.contact-item {
+  margin-bottom: 24px;
+}
+.contact-item h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.contact-item p,
+.contact-item a {
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+.contact-item a:hover {
+  text-decoration: underline;
+}
+.contact-item small {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+.delivery-note {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #000000ec;
+  color: #fff;
+  padding: 80px 0 40px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, max-content);
+  gap: 40px;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+.footer-logo .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.social-icon img {
+  width: 24px;
+  height: 24px;
+}
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-list li + li {
+  margin-top: 8px;
+}
+.footer-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-list a:hover {
+  text-decoration: underline;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.footer-bottom .privacy {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+.footer-bottom .privacy:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .contacts-block,
+  .footer-grid {
+    display: block;
+  }
+  .contacts-left {
+    width: 100%;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
